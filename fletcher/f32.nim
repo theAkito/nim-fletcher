@@ -14,7 +14,6 @@ proc fletcher*(data: openArray[uint16], length: uint64): uint =
         c0 += data[h]
         h.inc
         c1 += c0
-        h.inc
     c0 = c0 mod fin
     c1 = c1 mod fin
     
