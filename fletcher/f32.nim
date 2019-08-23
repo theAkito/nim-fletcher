@@ -2,7 +2,6 @@ proc fletcher*(data: openArray[uint16], length: uint64): uint =
   var
     c0: uint32 = 0
     c1: uint32 = 0
-    i: uint8 = 0
     h: uint32 = 0
     j: uint64 = 0
   const
