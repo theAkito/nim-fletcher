@@ -15,5 +15,6 @@ f64
 "fletcher"
 prep
 test
+tmp
 # Testing #
 tmp.nim
