@@ -1,3 +1,24 @@
-# nim-fletcher
+## What is this?
 
-Implementation of the Fletcher checksum algorithm. Library for projects written in Nim.
+This is a Nim module that takes files as arguments and outputs their respective Fletcher checksum. The Fletcher checksum has a bit lower error detection reliability than for example the well known CRC-32 but it is generally a lot faster than for example CRC-32 as well as Adler-32. The project's goal is to provide a very fast checksum algorithm to be used on devices like the Raspberry Pi.
+
+## Disclaimer
+
+The project in general is considered Work In Progress. The most reliable variation is Fletcher16, as it is not dependent on the CPU architecture's endianness and the way the algorithm was implemented, is approved to work.
+The Fletcher32's only weakness is its dependence on the CPU's endianness, which might affect the comparison of checksums between different CPU architectures on different machines, otherwise it is just as stable as Fletcher16.
+Fletcher64 is not considered stable yet and should not be used when expecting the ability to definitely rely on the results.
+
+## Tests
+```bash
+nimble test
+```
+Runs tests.
+
+## Documentation
+```bash
+nim doc --project validateip.nim
+```
+Creates documentation for the entire project.
+
+## Examples
+Arriving soon.
