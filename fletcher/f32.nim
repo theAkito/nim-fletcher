@@ -26,10 +26,3 @@ proc fletcher*(data: openArray[uint16], length: uint64): uint =
   c1 = c1 mod fin
 
   return c1 shl 16 or c0
-
-#[
-echo "-abcde- checksum = "
-echo fletcher([25185.uint16, 25699.uint16, 101.uint16], 3.uint64) # correct = 4031760169
-echo "-abcde- checksum = "
-echo fletcher([25185.uint16, 25699.uint16, 26213.uint16], 3.uint64) # correct = 1448095018
-]#

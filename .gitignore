@@ -13,6 +13,7 @@ f16
 f32
 f64
 "fletcher"
-"prep"
+prep
+test
 # Testing #
-"tmp.nim"
+tmp.nim
