@@ -16,7 +16,7 @@ Runs tests.
 
 ## Documentation
 ```bash
-nim doc --project validateip.nim
+nim doc --project fletcher.nim
 ```
 Creates documentation for the entire project.
 
