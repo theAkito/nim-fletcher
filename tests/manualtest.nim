@@ -1,13 +1,13 @@
 import
-  f16,
-  f32,
-  f64
+  fletcher/f16,
+  fletcher/f32,
+  fletcher/f64
 
 echo "FLETCHER16"
 echo "-abcde- checksum; should be 51440 = "
-echo f16.fletcher([97.uint8, 98.uint8, 99.uint8, 100.uint8, 101.uint8], 5.uint) # correct = 51440
+echo fletcher([97.uint8, 98.uint8, 99.uint8, 100.uint8, 101.uint8], 5.uint) # correct = 51440
 echo "-abcdef- checksum; should be 8279 = "
-echo f16.fletcher([97.uint8, 98.uint8, 99.uint8, 100.uint8, 101.uint8, 102.uint8], 6.uint) # correct = 8279
+echo fletcher([97.uint8, 98.uint8, 99.uint8, 100.uint8, 101.uint8, 102.uint8], 6.uint) # correct = 8279
 echo ""
 
 echo "FLETCHER32"

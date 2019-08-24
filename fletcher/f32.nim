@@ -1,4 +1,4 @@
-proc fletcher*(data: openArray[uint16], length: uint64): uint =
+proc fletcher*(data: openArray[uint16], length: uint64): uint64 =
   var
     c0: uint32 = 0
     c1: uint32 = 0
