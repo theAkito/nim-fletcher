@@ -17,5 +17,6 @@ f64
 prep
 test
 tmp
+manualtest
 # Testing #
 tmp.nim
