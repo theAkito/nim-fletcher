@@ -16,4 +16,4 @@ proc fletcher*(data: openArray[uint16], tlength: uint64): uint64 =
     j.inc
   c0 = c0 mod fin
   c1 = c1 mod fin
-  return c1 shl 8 or c0
+  return c1 shl 16 or c0
