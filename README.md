@@ -6,7 +6,12 @@ This is a Nim module that takes files as arguments and outputs their respective 
 
 The project in general is considered Work In Progress. The most reliable variation is Fletcher16, as it is not dependent on the CPU architecture's endianness and the way the algorithm was implemented, is approved to work.
 The Fletcher32's only weakness is its dependence on the CPU's endianness, which might affect the comparison of checksums between different CPU architectures on different machines, otherwise it is just as stable as Fletcher16.
-Fletcher64 is not considered stable yet and should not be used when expecting the ability to definitely rely on the results.
+
+#### Currently implemented variations
+ - [ ] Fletcher8
+ - [x] Fletcher16
+ - [ ] Fletcher32
+ - [ ] Fletcher64
 
 ## Tests
 ```bash
@@ -22,3 +27,10 @@ Creates documentation for the entire project.
 
 ## Examples
 Arriving soon.
+
+## TODO
+* make Fletcher32+ independent of CPU architecture
+* add optional Base64 encoding
+* apply delay type optimization
+* apply module substitution optimization
+* import statement optimizations
