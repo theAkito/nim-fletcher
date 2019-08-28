@@ -32,5 +32,5 @@ Arriving soon.
 * make Fletcher32+ independent of CPU architecture
 * add optional Base64 encoding
 * apply delay type optimization
-* apply module substitution optimization
+* apply modulo substitution optimization
 * import statement optimizations
