@@ -24,3 +24,5 @@ check
 # Testing #
 tmp.nim
 test.nim
+# Obsolete #
+prep.nim
