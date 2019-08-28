@@ -17,6 +17,10 @@ f64
 prep
 test
 tmp
+getfile
 manualtest
+testoutput
+check
 # Testing #
 tmp.nim
+test.nim
