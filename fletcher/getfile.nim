@@ -1,8 +1,8 @@
-import
-  streams
+from streams import
+  openFileStream,
+  atEnd,
+  readUint8
 
-#type
-#  ByteMode = set[uint8]
 type
   ByteMode* = enum
     i8, i16, i32, i64
@@ -13,7 +13,7 @@ var
 proc getFile*(filename: string, mode: ByteMode): seq[uint8] =
   case mode
   of i8:
-    "8-bit version not implemented.".quit
+    "8-bit variation not implemented.".quit
   of i16:
     let filestream = openFileStream(filename)
     while not filestream.atEnd:
@@ -21,5 +21,7 @@ proc getFile*(filename: string, mode: ByteMode): seq[uint8] =
     for items in fmtData:
       size.inc
     return fmtData
-  else:
+  of i32:
+    discard
+  of i64:
     discard
