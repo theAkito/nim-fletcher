@@ -34,3 +34,4 @@ Arriving soon.
 * apply delay type optimization
 * apply modulo substitution optimization
 * import statement optimizations
+* add documentation
