@@ -23,3 +23,10 @@ echo fletcher([1684234849.uint32, 101.uint32], 2.uint64) # correct = 14467467625
 echo "-abcdef- checksum; should be 14467579776138987718 = "
 echo fletcher([1684234849.uint32, 26213.uint32], 2.uint64) # correct = 14467579776138987718
 echo ""
+
+assert fletcher([97.uint8, 98.uint8, 99.uint8, 100.uint8, 101.uint8], 5.uint64) == 51440'u64
+assert fletcher([97.uint8, 98.uint8, 99.uint8, 100.uint8, 101.uint8, 102.uint8], 6.uint64) == 8279'u64
+assert fletcher([25185.uint16, 25699.uint16, 101.uint16], 3.uint64) == 4031760169'u64
+assert fletcher([25185.uint16, 25699.uint16, 26213.uint16], 3.uint64) == 1448095018'u64
+assert fletcher([1684234849.uint32, 101.uint32], 2.uint64) == 14467467625952928454'u64
+assert fletcher([1684234849.uint32, 26213.uint32], 2.uint64) == 14467579776138987718'u64
