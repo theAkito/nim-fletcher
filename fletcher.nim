@@ -1,7 +1,16 @@
+{.checks: off, optimization: speed.}
 import
   fletcher/check
 
-proc checksum*(filename: string, bits: string): uint64 =
+proc fletcher*(filename: string, bits: string): uint64 =
+  ## User-friendly wrapper API for calculating
+  ## the Fletcher checksum the easy way.
+  ## First parameter equals to
+  ## the file name of the file you want to open.
+  ## Second parameter equals to
+  ## the bit size of the Fletcher algorithm variation.
+  ## Example:
+  ##   let fileChecksum: uint64 = fletcher("myfile.bin", "16")
   case bits
   of "8", "eight", "8bit", "8-bit", "8b":
     return calChecksum(filename, i8)

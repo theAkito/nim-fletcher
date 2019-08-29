@@ -1,6 +1,7 @@
 # ---> Nim
 nimcache/
 nimblecache/
+htmldocs/
 
 # ---> Kate
 # Swap Files #

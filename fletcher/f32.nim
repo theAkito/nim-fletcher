@@ -1,4 +1,5 @@
 proc fletcher*(data: openArray[uint16], tlength: uint64): uint64 =
+  ## 32-bit variation of fletcher proc.
   var
     c0: uint32 = 0
     c1: uint32 = 0
