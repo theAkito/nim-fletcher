@@ -3,6 +3,8 @@ import
   f32,
   f64,
   getfile
+export
+  getfile
 
 proc calChecksum*(filename: string, mode: ByteMode): uint64 =
   case mode

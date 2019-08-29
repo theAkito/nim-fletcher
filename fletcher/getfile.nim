@@ -9,7 +9,7 @@ type
 var
   size*: uint64 = 0
 
-proc getFile*(filename: string, mode: ByteMode): openArray[uint8 | uint16 | uint32] =
+proc getFile*(filename: string, mode: ByteMode): seq[uint8] | seq[uint16] | seq[uint32] =
   case mode
   of i8:
     "8-bit variation not implemented.".quit
