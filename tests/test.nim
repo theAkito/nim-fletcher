@@ -2,7 +2,8 @@ import
   fletcher/f16,
   fletcher/f32,
   fletcher/f64,
-  fletcher/getfile
+  fletcher/getfile,
+  fletcher
 
 let
   f16a = fletcher([97.uint8, 98.uint8, 99.uint8, 100.uint8, 101.uint8], 5.uint) # correct = 51440
@@ -22,3 +23,13 @@ assert f32b == 1448095018
 #assert f32c ==
 assert f64a == 14467467625952928454'u64
 assert f64b == 14467579776138987718'u64
+
+# 16
+assert fletcher("tests/testbin") == fletcher("tests/testbin1")
+assert fletcher("tests/testbin") == fletcher("tests/testbin2")
+assert fletcher("tests/testbin") == fletcher("tests/testbin3")
+assert fletcherCompare("16", "tests/testbin", "tests/testbin1") == true
+assert fletcherCompare(bits = "16", original = "tests/testbin", filenames = "tests/testbin1", "tests/testbin2") == true
+assert fletcherCompare(bits = "16", original = "tests/testbin", filenames = "tests/testbin1", "tests/testbin2", "tests/testbin3") == true
+assert fletcherCompare(bits = "16", original = "tests/testbin", filenames = "tests/testbin1", "tests/testbin2", "tests/testbin-false") == false
+assert fletcherCompare(bits = "16", original = "tests/testbin", filenames = "tests/testbin1", "tests/testbin2", "tests/testbin-false", "tests/testbin3") == false
