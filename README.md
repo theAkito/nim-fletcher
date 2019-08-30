@@ -4,7 +4,7 @@ This is a Nim module that takes files as arguments and outputs their respective 
 
 ## Disclaimer
 
-The project in general is considered Work In Progress. The most reliable variation is Fletcher16, as it is not dependent on the CPU architecture's endianness and the way the algorithm was implemented, is approved to work.
+The project in general is considered **Work In Progress**. The most reliable variation is Fletcher16, as it is not dependent on the CPU architecture's endianness and the way the algorithm was implemented, is approved to work.
 The Fletcher32's only weakness is its dependence on the CPU's endianness, which might affect the comparison of checksums between different CPU architectures on different machines, otherwise it is just as stable as Fletcher16.
 
 #### Currently implemented variations
@@ -33,11 +33,20 @@ Creates documentation for the entire project.
 ## Examples
 ##### Choose your way of using the API.
 ```Nim
-import fletcher
-let fileChecksum_1: uint64 = fletcher("myfile.bin", "16")
-let fileChecksum_2 = "myfile.bin".fletcher("32b")
-let fileChecksum_3: uint64 = fletcher(filename = "myfile.bin", bits = "sixtyfour")
-let fileChecksum_4 = "myfile.bin".fletcher # the default is the 16-bit variation
+from fletcher import fletcher
+let
+  fileChecksum_1: uint64 = fletcher("myfile.bin", "16")
+  fileChecksum_2 = "myfile.bin".fletcher("32b")
+  fileChecksum_3: uint64 = fletcher(filename = "myfile.bin", bits = "sixtyfour")
+  fileChecksum_4 = "myfile.bin".fletcher # the default is the 16-bit variation
+```
+
+##### Compare a variable amount of files to a source file by checksum.
+```Nim
+from fletcher import fletcherCompare
+let
+  fileComparison_1: bool = fletcherCompare(bits = "16", original = "path/to/source_file", filenames = "path/to/destfile1", "path/to/destfile2", "path/to/destfile3")
+  fileComparison_2 = "16".fletcherCompare("path/to/source_file", "path/to/destfile1", "path/to/destfile2", "path/to/destfile3")
 ```
 
 ## Advanced
