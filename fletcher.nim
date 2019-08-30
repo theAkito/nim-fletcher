@@ -2,7 +2,7 @@
 import
   fletcher/check
 
-proc fletcher*(filename: string, bits: string): uint64 =
+proc fletcher*(filename: string, bits: string = "16"): uint64 =
   ## User-friendly wrapper API for calculating
   ## the Fletcher checksum the easy way.
   ## First parameter equals to
