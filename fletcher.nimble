@@ -7,3 +7,7 @@ requires "nim >= 0.20.0"
 
 task manualtest, "Runs the manual test.":
   exec "nim cc -r tests/manualtest.nim"
+task configure, "Creates nim.cfg for optimized builds.":
+  exec "nim makenimcfg.nims"
+task clean, "Removes nim.cfg.":
+  exec "rm nim.cfg"
