@@ -19,6 +19,8 @@ nimble test
 ```
 Runs tests.
 
+The visual test, where you can check the values yourself, is optional.
+
 ## Documentation
 ```bash
 nim doc --project fletcher.nim
@@ -26,12 +28,20 @@ nim doc --project fletcher.nim
 Creates documentation for the entire project.
 
 ## Examples
-Arriving soon.
+##### Choose your way of using the API.
+```Nim
+import fletcher
+let fileChecksum_1: uint64 = fletcher("myfile.bin", "16")
+let fileChecksum_2 = "myfile.bin".fletcher("32b")
+let fileChecksum_3: uint64 = fletcher(filename = "myfile.bin", bits = "sixtyfour")
+let fileChecksum_4 = "myfile.bin".fletcher # the default is the 16-bit variation
+```
 
 ## TODO
 * make Fletcher32+ independent of CPU architecture
 * add optional Base64 encoding
 * apply delay type optimization
 * apply modulo substitution optimization
-* import statement optimizations
-* add documentation
+* ~~import statement optimizations~~
+* ~~add documentation~~
+* checksum text
