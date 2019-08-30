@@ -45,6 +45,7 @@ let fileChecksum_4 = "myfile.bin".fletcher # the default is the 16-bit variation
 * add optional Base64 encoding
 * apply delay type optimization
 * apply modulo substitution optimization
+* checksum text
+* varargs file comparison
 * ~~import statement optimizations~~
 * ~~add documentation~~
-* checksum text
