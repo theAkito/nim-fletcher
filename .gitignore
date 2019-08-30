@@ -17,6 +17,7 @@ f64
 "fletcher"
 prep
 test
+testi
 tmp
 getfile
 manualtest
@@ -25,5 +26,6 @@ check
 # Testing #
 tmp.nim
 test.nim
+testi.nim
 # Obsolete #
 prep.nim
