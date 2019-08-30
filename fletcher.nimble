@@ -1,4 +1,4 @@
-version     = "0.2.0"
+version     = "0.2.1"
 author      = "Akito"
 description = "Implementation of the Fletcher checksum algorithm."
 license     = "GPLv3+"
