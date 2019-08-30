@@ -67,6 +67,6 @@ Deletes the generated `nim.cfg`.
 * apply delay type optimization
 * apply modulo substitution optimization
 * checksum text
-* varargs file comparison
+* ~~varargs file comparison~~
 * ~~import statement optimizations~~
 * ~~add documentation~~
