@@ -10,4 +10,4 @@ task manualtest, "Runs the manual test.":
 task configure, "Creates nim.cfg for optimized builds.":
   exec "nim makenimcfg.nims"
 task clean, "Removes nim.cfg.":
-  exec "rm nim.cfg"
+  exec "nim clean.nims"
