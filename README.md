@@ -40,6 +40,18 @@ let fileChecksum_3: uint64 = fletcher(filename = "myfile.bin", bits = "sixtyfour
 let fileChecksum_4 = "myfile.bin".fletcher # the default is the 16-bit variation
 ```
 
+## Advanced
+##### For testing purposes and development
+```Bash
+nimble configure
+```
+Creates a `nim.cfg` with optimizations as compilation arguments.
+
+```Bash
+nimble clean
+```
+Deletes the generated `nim.cfg`.
+
 ## TODO
 * make Fletcher32+ independent of CPU architecture
 * add optional Base64 encoding
