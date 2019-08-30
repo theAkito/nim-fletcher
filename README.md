@@ -19,7 +19,10 @@ nimble test
 ```
 Runs tests.
 
-The visual test, where you can check the values yourself, is optional.
+The visual test, where you can check the values yourself, is optional:
+```bash
+nimble manualtest
+```
 
 ## Documentation
 ```bash
