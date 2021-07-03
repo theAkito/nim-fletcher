@@ -1,6 +1,13 @@
-{.checks: off, optimization: speed.}
+{.optimization: speed.}
 import
-  fletcher/check
+  fletcher/check,
+  tables
+
+func allSuccess*(filenameToChecksum: Table[string, bool]): bool =
+  result = true
+  for success in filenameToChecksum.values:
+    if success == false:
+      return false
 
 proc fletcher*(filename: string, bits: string = "16"): uint64 =
   ## User-friendly wrapper API for calculating
@@ -21,37 +28,32 @@ proc fletcher*(filename: string, bits: string = "16"): uint64 =
   of "64", "sixtyfour", "64bit", "64-bit", "64b":
     return calChecksum(filename, i64)
 
-proc fletcherCompare*(bits: string = "16", original: string, filenames: varargs[string]): bool =
+proc fletcherCompare*(bits: string = "16", original: string, filenames: varargs[string]): Table[string, bool] =
   ## Compares variable amount of files to a source file,
   ## by computing the fletcher checksum for the first file
   ## and then comparing the first checksum to each other
   ## file's checksum, respectively.
-  ## Returns `false` if any of the files did not match.
+  ## Returns filename to bool of success.
   case bits
   of "8", "eight", "8bit", "8-bit", "8b":
     discard
   of "16", "sixteen", "16bit", "16-bit", "16b":
     var
       fletcherResponse: uint64
-      compList: seq[uint64]
-      checksumInc: uint64 = 0
+      compTable: Table[string, uint64]
       originalChecksum = fletcher(original)
-      flag: bool = false
     for filename in filenames:
       fletcherResponse = calChecksum(filename, i16)
-      compList.add(fletcherResponse)
-    for checksum in compList:
+      compTable[filename] = fletcherResponse
+    for filename, checksum in compTable:
       try:
-        doAssert originalChecksum == compList[checksumInc]
-        checksumInc += 1
-      except AssertionError:
-        flag = true
-        checksumInc += 1
-        echo("File #" & $checksumInc & " did not match with source file.")
+        doAssert originalChecksum == compTable[filename]
+        result[filename] = true
+      except AssertionDefect:
+        result[filename] = false
         continue
       except ValueError:
         "Wrong type of value passed.".quit
-    if flag == true: return false
   of "32", "thirtytwo", "32bit", "32-bit", "32b":
     discard
   of "64", "sixtyfour", "64bit", "64-bit", "64b":
