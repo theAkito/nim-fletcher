@@ -32,6 +32,8 @@ getfile
 manualtest
 testoutput
 check
+fletcher.out
+fletcher_debug
 # Testing #
 tmp.nim
 test.nim
